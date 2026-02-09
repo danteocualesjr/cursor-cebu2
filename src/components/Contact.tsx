@@ -1,32 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Mail, Send, ArrowRight } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative px-6 py-32">
-      {/* Background accent */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/[0.01] blur-[120px]" />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid gap-16 lg:grid-cols-2">
+    <section id="contact" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left column — info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="mb-4 text-sm font-medium tracking-widest text-white/40 uppercase">
+          <div>
+            <p className="mb-3 text-sm font-medium tracking-widest text-white/40 uppercase">
               Contact
             </p>
-            <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Get in touch.
             </h2>
-            <p className="mb-8 max-w-md text-lg leading-relaxed text-white/40">
+            <p className="mb-8 max-w-md text-base leading-relaxed text-white/40">
               Have a question, want to collaborate, or just want to say hi?
               Reach out to us and we&apos;ll get back to you.
             </p>
@@ -34,7 +23,7 @@ export default function Contact() {
             {/* Direct email */}
             <a
               href="mailto:dante@nativestack.ai"
-              className="mb-12 inline-flex items-center gap-3 text-white/60 transition-colors hover:text-white"
+              className="mb-10 inline-flex items-center gap-3 text-white/60 transition-colors hover:text-white"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5">
                 <Mail className="h-5 w-5" />
@@ -48,8 +37,8 @@ export default function Contact() {
             </a>
 
             {/* Social links */}
-            <div className="space-y-4">
-              <p className="text-sm font-medium tracking-widest text-white/30 uppercase">
+            <div className="space-y-3">
+              <p className="text-xs font-medium tracking-widest text-white/30 uppercase">
                 Follow Us
               </p>
               <div className="flex gap-3">
@@ -82,22 +71,17 @@ export default function Contact() {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right column — form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <div>
             <form
               action="mailto:dante@nativestack.ai"
               method="POST"
               encType="text/plain"
-              className="gradient-border rounded-2xl bg-[#141414] p-8"
+              className="rounded-xl border border-white/10 bg-white/[0.02] p-6"
             >
-              <div className="mb-6">
+              <div className="mb-5">
                 <label
                   htmlFor="name"
                   className="mb-2 block text-sm font-medium text-white/60"
@@ -109,12 +93,12 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-white/20 focus:outline-none focus:ring-0 transition-colors"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-white/20 focus:outline-none transition-colors"
                   placeholder="Your name"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-5">
                 <label
                   htmlFor="email"
                   className="mb-2 block text-sm font-medium text-white/60"
@@ -126,12 +110,12 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-white/20 focus:outline-none focus:ring-0 transition-colors"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-white/20 focus:outline-none transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
 
-              <div className="mb-6">
+              <div className="mb-5">
                 <label
                   htmlFor="message"
                   className="mb-2 block text-sm font-medium text-white/60"
@@ -141,22 +125,22 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={4}
                   required
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-white/20 focus:outline-none focus:ring-0 transition-colors"
+                  className="w-full resize-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-white/20 focus:outline-none transition-colors"
                   placeholder="What's on your mind?"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-medium text-black transition-all hover:bg-white/90"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-white/90"
               >
                 <Send className="h-4 w-4" />
                 Send Message
               </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
@@ -178,7 +162,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/40 transition-all hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/40 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
     >
       {icon}
     </a>

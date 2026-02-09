@@ -14,32 +14,28 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
+        <Divider />
         <Mission />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
+        <Divider />
         <Events />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
+        <Divider />
         <Speakers />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
+        <Divider />
         <Gallery />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
+        <Divider />
         <GetInvolved />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
+        <Divider />
         <Contact />
       </main>
       <Footer />
     </>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="mx-auto max-w-6xl px-6">
+      <div className="h-px bg-white/5" />
+    </div>
   );
 }

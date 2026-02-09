@@ -74,7 +74,6 @@ export default function Footer() {
                 alt="Cursor Community Cebu"
                 width={28}
                 height={28}
-                className="h-7 w-7"
               />
               <span className="text-sm font-semibold tracking-wide text-white">
                 Cursor Community{" "}
@@ -158,7 +157,6 @@ export default function Footer() {
                 alt="Cursor"
                 width={14}
                 height={14}
-                className="h-3.5 w-3.5"
               />
               Cursor
             </a>

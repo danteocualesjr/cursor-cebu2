@@ -25,7 +25,6 @@ export default function Navbar() {
             alt="Cursor Community Cebu"
             width={32}
             height={32}
-            className="h-8 w-8"
           />
           <span className="text-sm font-semibold tracking-wide text-white">
             Cursor Community <span className="text-white/60">Cebu</span>

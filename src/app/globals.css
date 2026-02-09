@@ -5,7 +5,7 @@
   --foreground: #fafafa;
   --muted: #888888;
   --card: #141414;
-  --card-border: #222222;
+  --card-border: #1f1f1f;
   --accent: #333333;
 }
 
@@ -62,20 +62,7 @@ body {
   text-shadow: 0 0 80px rgba(255, 255, 255, 0.15);
 }
 
-/* Gradient border utility */
-.gradient-border {
-  position: relative;
-}
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+/* Section spacing */
+section {
+  overflow: hidden;
 }

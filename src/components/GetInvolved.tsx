@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Ticket, Mic, Handshake, ArrowRight } from "lucide-react";
 
 const cards = [
@@ -32,48 +31,38 @@ const cards = [
 
 export default function GetInvolved() {
   return (
-    <section id="get-involved" className="relative px-6 py-32">
-      <div className="mx-auto max-w-7xl">
+    <section id="get-involved" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
-        >
-          <p className="mb-4 text-sm font-medium tracking-widest text-white/40 uppercase">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-sm font-medium tracking-widest text-white/40 uppercase">
             Get Involved
           </p>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="mb-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             There&apos;s a place for you here.
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-white/40">
+          <p className="mx-auto max-w-xl text-base text-white/40">
             Whether you want to learn, teach, or support — here&apos;s how you
             can be part of Cursor Community Cebu.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {cards.map((card, index) => (
-            <motion.div
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {cards.map((card) => (
+            <div
               key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="gradient-border group flex flex-col rounded-2xl bg-[#141414] p-8 transition-colors hover:bg-[#1a1a1a]"
+              className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 transition-colors group-hover:bg-white/[0.08]">
-                <card.icon className="h-7 w-7 text-white/60" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-white/5">
+                <card.icon className="h-5 w-5 text-white/60" />
               </div>
 
-              <h3 className="mb-3 text-xl font-semibold text-white">
+              <h3 className="mb-2 text-lg font-semibold text-white">
                 {card.title}
               </h3>
 
-              <p className="mb-6 flex-1 leading-relaxed text-white/40">
+              <p className="mb-5 flex-1 text-sm leading-relaxed text-white/40">
                 {card.description}
               </p>
 
@@ -84,7 +73,7 @@ export default function GetInvolved() {
                 {card.cta}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
