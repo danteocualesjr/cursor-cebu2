@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { User, ArrowRight, Mic } from "lucide-react";
 import { speakers } from "@/data/speakers";
@@ -109,12 +110,24 @@ function SpeakerCard({
       transition={{ duration: 0.4, delay: index * 0.05 }}
       className="gradient-border group flex items-start gap-4 rounded-2xl bg-[#141414] p-6 transition-colors hover:bg-[#1a1a1a]"
     >
-      {/* Avatar placeholder */}
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/5">
-        <User className="h-5 w-5 text-white/30" />
+      {/* Avatar */}
+      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-white/5">
+        {speaker.image ? (
+          <Image
+            src={speaker.image}
+            alt={speaker.name}
+            fill
+            className="object-cover"
+            sizes="56px"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <User className="h-6 w-6 text-white/30" />
+          </div>
+        )}
       </div>
 
-      <div className="min-w-0">
+      <div className="min-w-0 flex-1">
         <h4 className="font-semibold text-white">{speaker.name}</h4>
         <p className="text-sm text-white/40">
           {speaker.role}

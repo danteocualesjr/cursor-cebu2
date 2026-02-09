@@ -1,39 +1,39 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Camera } from "lucide-react";
 
-// Placeholder gallery items — replace with real photos
+// Stock photos from Unsplash - tech meetups, workshops, community events
 const galleryItems = [
   {
     id: 1,
     alt: "Workshop opening — Jan 17, 2025",
-    gradient: "from-[#1a1a2e] to-[#16213e]",
+    src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
   },
   {
     id: 2,
     alt: "Hands-on Cursor session",
-    gradient: "from-[#1a1a1a] to-[#2d2d2d]",
+    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
   },
   {
     id: 3,
     alt: "Speaker presentation",
-    gradient: "from-[#0f0f23] to-[#1a1a2e]",
+    src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80",
   },
   {
     id: 4,
     alt: "Community networking",
-    gradient: "from-[#1a2332] to-[#0f1923]",
+    src: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
   },
   {
     id: 5,
     alt: "Pair programming session",
-    gradient: "from-[#1a1a1a] to-[#111]",
+    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
   },
   {
     id: 6,
     alt: "Group photo",
-    gradient: "from-[#1e1e2e] to-[#14141e]",
+    src: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&q=80",
   },
 ];
 
@@ -73,22 +73,22 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className={`group relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient}`}
+              className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#141414]"
             >
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 transition-opacity">
-                <Camera className="h-8 w-8 text-white/10" />
-                <span className="px-4 text-center text-xs text-white/15">
-                  {item.alt}
-                </span>
-              </div>
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
               {/* Caption on hover */}
-              <div className="absolute inset-x-0 bottom-0 translate-y-full p-4 transition-transform group-hover:translate-y-0">
-                <p className="text-sm text-white/80">{item.alt}</p>
+              <div className="absolute inset-x-0 bottom-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
+                <p className="text-sm font-medium text-white">{item.alt}</p>
               </div>
             </motion.div>
           ))}
@@ -99,7 +99,7 @@ export default function Gallery() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 text-center text-sm text-white/20"
+          className="mt-8 text-center text-sm text-white/30"
         >
           Photos from the Cursor Community Cebu Launch Workshop — January 17,
           2025
