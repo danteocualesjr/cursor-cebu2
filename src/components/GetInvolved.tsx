@@ -31,47 +31,47 @@ const cards = [
 
 export default function GetInvolved() {
   return (
-    <section id="get-involved" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="get-involved" className="px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-5xl">
         {/* Section header */}
-        <div className="mb-12 text-center">
-          <p className="mb-3 text-sm font-medium tracking-widest text-white/40 uppercase">
+        <div className="mb-8 text-center sm:mb-10 md:mb-12">
+          <p className="mb-2 text-xs font-medium tracking-widest text-white/40 uppercase sm:mb-3 sm:text-sm">
             Get Involved
           </p>
-          <h2 className="mb-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mb-2 text-2xl font-bold tracking-tight text-white sm:mb-3 sm:text-3xl md:text-4xl">
             There&apos;s a place for you here.
           </h2>
-          <p className="mx-auto max-w-xl text-base text-white/40">
+          <p className="mx-auto max-w-lg text-xs text-white/40 sm:text-sm md:text-base">
             Whether you want to learn, teach, or support — here&apos;s how you
             can be part of Cursor Community Cebu.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Cards - 3 columns */}
+        <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-3 sm:gap-5">
           {cards.map((card) => (
             <div
               key={card.title}
-              className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-colors hover:bg-white/[0.04]"
+              className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-colors hover:bg-white/[0.04] sm:p-5 md:p-6"
             >
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-white/5">
-                <card.icon className="h-5 w-5 text-white/60" />
+              <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 sm:mb-4 sm:h-10 sm:w-10 md:h-11 md:w-11">
+                <card.icon className="h-4 w-4 text-white/60 sm:h-5 sm:w-5" />
               </div>
 
-              <h3 className="mb-2 text-lg font-semibold text-white">
+              <h3 className="mb-1.5 text-base font-semibold text-white sm:mb-2 sm:text-lg">
                 {card.title}
               </h3>
 
-              <p className="mb-5 flex-1 text-sm leading-relaxed text-white/40">
+              <p className="mb-4 flex-1 text-xs leading-relaxed text-white/40 sm:mb-5 sm:text-sm">
                 {card.description}
               </p>
 
               <a
                 href={card.href}
-                className="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-white/70 transition-colors hover:text-white sm:gap-2 sm:text-sm"
               >
                 {card.cta}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
               </a>
             </div>
           ))}

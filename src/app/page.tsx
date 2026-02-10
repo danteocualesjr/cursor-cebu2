@@ -34,7 +34,7 @@ export default function Home() {
 
 function Divider() {
   return (
-    <div className="mx-auto max-w-6xl px-6">
+    <div className="mx-auto max-w-5xl px-4 sm:px-6">
       <div className="h-px bg-white/5" />
     </div>
   );
